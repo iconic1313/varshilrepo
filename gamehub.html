@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCONIC Game Hub</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            padding: 70px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ff00ff, #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 20px rgba(255, 0, 255, 0.5);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Game Container */
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Game Card */
+        .game-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            width: 220px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 0, 255, 0.6);
+        }
+
+        .game-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid #ff00ff;
+            transition: transform 0.5s;
+        }
+
+        .game-card:hover img {
+            transform: rotateY(360deg);
+        }
+
+        .game-card a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        .game-card a:hover {
+            color: #ffcc00;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .game-card {
+                width: 150px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>iCONIC Game Hub</h1>
+    <p>Play your favorite games Here!</p>
+    <p>Relive your childhood with us!</p>
+</div>
+
+<div class="game-container">
+    <div class="game-card">
+        <img src="download (4).png" alt="Tic Tac Toe">
+        <a href="tictac.html" target="_blank">Tic Tac Toe</a>
+    </div>
+
+    <div class="game-card">
+        <img src="download.jpg" alt="Connect 4">
+        <a href="connenct4.html" target="_blank">Connect 4</a>
+    </div>
+
+    <div class="game-card">
+        <img src="download (1).jpg" alt="Guess Number">
+        <a href="guessnumber.html" target="_blank">Guess Number</a>
+    </div>
+
+    <div class="game-card">
+        <img src="images (1).jpg" alt="Rock Paper Scissors">
+        <a href="rps.html" target="_blank">Rock Paper Scissors</a>
+    </div>
+
+    <div class="game-card">
+        <img src="snack.jpg" alt="snack Game">
+        <a href="snake.html" target="_blank">snack game</a>
+    </div>
+
+    <!-- <div class="game-card">
+        <img src="https://via.placeholder.com/100" alt="Chess">
+        <a href="#" target="_blank">Chess</a>
+    </div> -->
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 iCONIC Game Hub. Created by Varshil Chauhan</p>
+</div>
+
+</body>
+</html>

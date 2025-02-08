@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Main Container */
+#container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Titles */
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff00ff, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 15px rgba(255, 0, 255, 0.5);
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #3a70a5, #e9ecef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Game Board */
+#cellcontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+    gap: 12px;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    max-width: 300px;
+}
+
+/* Game Cells */
+.cell {
+    width: 75px;
+    height: 75px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    font-size: 50px;
+    line-height: 75px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #77bfe1, #d9d9d9);
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover & Click Effects */
+.cell:hover {
+    background: linear-gradient(135deg, #e0e0e0, #c9c9c9);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 8px rgba(255, 255, 255, 0.2);
+}
+
+.cell:active {
+    transform: translateY(0) scale(1);
+}
+
+@keyframes cellClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.cell.clicked {
+    animation: cellClick 0.2s ease;
+}
+
+/* Fancy Hover Effect */
+.cell::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.cell:hover::after {
+    width: 40px;
+    height: 40px;
+}
+/* Reset Button */
+#restartbutton {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow Effect on Hover */
+#restartbutton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    background: linear-gradient(45deg, #45a049, #66bb6a);
+}
+
+/* Click Bounce Effect */
+#restartbutton:active {
+    transform: scale(0.95);
+}
+
+/* Button Animation - Pulsating Glow */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    }
+}
+
+#restartbutton {
+    animation: pulseGlow 2s infinite;
+}
+

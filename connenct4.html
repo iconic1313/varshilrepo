@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4 Deluxe</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Game Container */
+.game-container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Title */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ff00ff, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 15px rgba(255, 0, 255, 0.5);
+}
+
+/* Player Turn */
+.player-turn {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(6, 100px);
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Cells */
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+}
+
+/* Pieces */
+.piece {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.piece.red {
+    background: linear-gradient(45deg, #ff4444, #cc0000);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.piece.yellow {
+    background: linear-gradient(45deg, #ffff00, #ccac00);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
+}
+
+/* Game Status */
+#status {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Reset Button */
+.reset-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff00ff, #ffcc00);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reset-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+/* Winning Animation */
+.win-particles {
+    position: absolute;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    animation: particle 1s ease-out;
+}
+
+@keyframes particle {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>  Iconnic Connect 4 </h1>
+        <div class="player-turn"></div>
+        <div class="game-board" id="board"></div>
+        <button class="reset-button" onclick="resetGame()">Reset Game</button>
+        <div id="status"></div>
+        <div class="win-particles" id="particles"></div>
+    </div>
+
+    <script src="script2.js">
+
+    </script>
+</body>
+</html>
